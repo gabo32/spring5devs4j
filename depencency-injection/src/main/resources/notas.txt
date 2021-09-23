@@ -1,0 +1,18 @@
+Inyeccion de dependencias
+	por constructor
+	por setter
+	por atributo
+Los estereotipos nos dan un rol 
+	@component
+		bean que no entra en las categorias
+	@controller
+		exposicion de datos
+	@service
+		beans con logica de negocio
+	@repository
+		acceso a datos
+Qualifiers
+	se pone el nombre en @component('nombre')
+	en autowired se coloca @qualifier('nombre')
+	solo se usa cuando se tienen 2 o mas objetos en el contexto
+	
