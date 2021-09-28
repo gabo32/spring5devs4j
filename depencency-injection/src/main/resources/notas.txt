@@ -41,3 +41,9 @@ Uso de @SpringBootApplication
 	@Configuration
 	@ComponentScan
 	@EnableAutoConfiguration
+Carga de propiedades
+	crear archivo .properties
+	crear Clase FigurePropertiConfiguration
+	Crear un metodo con anotacion bean que devuelva PropertySourcesPlaceholderConfigurer
+	y con anotaciones @Value("${circle.radius:0}") con valor por defecto
+	
