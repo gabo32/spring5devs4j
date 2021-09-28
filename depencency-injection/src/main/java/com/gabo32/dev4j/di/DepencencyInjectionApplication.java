@@ -8,6 +8,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 
 import com.gabo32.dev4j.di.atributo.Coche;
+import com.gabo32.dev4j.di.autowire.AreaCalculatorService;
 import com.gabo32.dev4j.di.profiles.EnvironmentService;
 import com.gabo32.dev4j.di.qualifier.Animal;
 import com.gabo32.dev4j.di.qualifier.Avion;
@@ -57,6 +58,9 @@ public class DepencencyInjectionApplication {
 		
 		String nombreAplicacion = contex.getBean(String.class);
 		log.info("Nombre aplicacon {}", nombreAplicacion);
+		
+		AreaCalculatorService calculator = contex.getBean(AreaCalculatorService.class);
+		log.info("Area total {}", calculator.calcAreas());
 		
 	}
 	

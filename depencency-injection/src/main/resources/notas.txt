@@ -33,3 +33,6 @@ Scopes(tiempo de vida de bena)
 Beans de forma explicita
 	Cuando no se pueda colocar la anotacion
 	añadir @Bean a un metodo que devuelva el objeto del tipo que se necesita
+Autowire con listas
+	se puede indicar que se inyecten todos los objetos de un tipo en una lista
+	o que implementen una interfaz
