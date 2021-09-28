@@ -25,4 +25,9 @@ Perfiles
 	las variables de VM tienen mas preferencia
 	hay que añadir default al perfil por defecto
 		@Profile(value= {"dev","default"})	
+Scopes(tiempo de vida de bena)
+	singleton 1 solo (por defecto)
+	prototipe 1 cada que se solicita
+	request 1 por cada peticion
+	session 1 por session http
 		

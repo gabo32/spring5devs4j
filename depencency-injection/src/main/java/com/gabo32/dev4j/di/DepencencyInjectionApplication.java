@@ -13,6 +13,7 @@ import com.gabo32.dev4j.di.qualifier.Avion;
 import com.gabo32.dev4j.di.qualifier.Nido;
 import com.gabo32.dev4j.di.qualifier.Pajaro;
 import com.gabo32.dev4j.di.qualifier.Perro;
+import com.gabo32.dev4j.di.scopes.EjemploScopeService;
 
 @SpringBootApplication
 public class DepencencyInjectionApplication {
@@ -46,6 +47,14 @@ public class DepencencyInjectionApplication {
 		
 		EnvironmentService environmentService = contex.getBean(EnvironmentService.class);
 		log.info("Active environment: {}", environmentService.getEnvironment());
+		
+		EjemploScopeService ejemploScopeService = contex.getBean(EjemploScopeService.class);
+		EjemploScopeService ejemploScopeService1 = contex.getBean(EjemploScopeService.class);
+		
+		log.info("Are beans equals {}", ejemploScopeService.equals(ejemploScopeService1));
+		log.info("Are beans equals {}", ejemploScopeService1.equals(ejemploScopeService));
+		
+		
 	}
 
 }
