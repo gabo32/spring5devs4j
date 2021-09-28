@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
 import com.gabo32.dev4j.di.atributo.Coche;
+import com.gabo32.dev4j.di.profiles.EnvironmentService;
 import com.gabo32.dev4j.di.qualifier.Animal;
 import com.gabo32.dev4j.di.qualifier.Avion;
 import com.gabo32.dev4j.di.qualifier.Nido;
@@ -42,6 +43,9 @@ public class DepencencyInjectionApplication {
 		
 		Nido nido = contex.getBean(Nido.class);
 		nido.imprimir();
+		
+		EnvironmentService environmentService = contex.getBean(EnvironmentService.class);
+		log.info("Active environment: {}", environmentService.getEnvironment());
 	}
 
 }

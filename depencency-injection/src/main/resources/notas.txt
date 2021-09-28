@@ -15,4 +15,14 @@ Qualifiers
 	se pone el nombre en @component('nombre')
 	en autowired se coloca @qualifier('nombre')
 	solo se usa cuando se tienen 2 o mas objetos en el contexto
-	
+Perfiles
+	hay que definir los beans
+	dev, qa, prod
+	en el application properties hay que colocar
+		->spring.profiles.active=prod
+	o en las variables de la VM
+		->-Dspring.profiles.active=dev
+	las variables de VM tienen mas preferencia
+	hay que añadir default al perfil por defecto
+		@Profile(value= {"dev","default"})	
+		
