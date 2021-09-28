@@ -36,3 +36,8 @@ Beans de forma explicita
 Autowire con listas
 	se puede indicar que se inyecten todos los objetos de un tipo en una lista
 	o que implementen una interfaz
+Uso de @SpringBootApplication
+	equivalente
+	@Configuration
+	@ComponentScan
+	@EnableAutoConfiguration

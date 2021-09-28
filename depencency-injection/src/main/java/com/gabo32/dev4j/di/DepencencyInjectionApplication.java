@@ -3,9 +3,12 @@ package com.gabo32.dev4j.di;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
 import com.gabo32.dev4j.di.atributo.Coche;
 import com.gabo32.dev4j.di.autowire.AreaCalculatorService;
@@ -17,7 +20,10 @@ import com.gabo32.dev4j.di.qualifier.Pajaro;
 import com.gabo32.dev4j.di.qualifier.Perro;
 import com.gabo32.dev4j.di.scopes.EjemploScopeService;
 
-@SpringBootApplication
+//@SpringBootApplication
+@Configuration
+@ComponentScan
+@EnableAutoConfiguration
 public class DepencencyInjectionApplication {
 
 	
