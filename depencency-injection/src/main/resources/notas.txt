@@ -30,4 +30,6 @@ Scopes(tiempo de vida de bena)
 	prototipe 1 cada que se solicita
 	request 1 por cada peticion
 	session 1 por session http
-		
+Beans de forma explicita
+	Cuando no se pueda colocar la anotacion
+	añadir @Bean a un metodo que devuelva el objeto del tipo que se necesita

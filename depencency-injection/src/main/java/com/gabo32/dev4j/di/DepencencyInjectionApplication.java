@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.Bean;
 
 import com.gabo32.dev4j.di.atributo.Coche;
 import com.gabo32.dev4j.di.profiles.EnvironmentService;
@@ -54,7 +55,14 @@ public class DepencencyInjectionApplication {
 		log.info("Are beans equals {}", ejemploScopeService.equals(ejemploScopeService1));
 		log.info("Are beans equals {}", ejemploScopeService1.equals(ejemploScopeService));
 		
+		String nombreAplicacion = contex.getBean(String.class);
+		log.info("Nombre aplicacon {}", nombreAplicacion);
 		
+	}
+	
+	@Bean
+	public String getApplicationName() {
+		return "Gabo 32 app";
 	}
 
 }
