@@ -46,4 +46,11 @@ Carga de propiedades
 	crear Clase FigurePropertiConfiguration
 	Crear un metodo con anotacion bean que devuelva PropertySourcesPlaceholderConfigurer
 	y con anotaciones @Value("${circle.radius:0}") con valor por defecto
+SpEL
+	Spring expression languaje
+	operaciones aritmentioca, rleacionesl, logicos condicionales y expresiones regulares
+	ExpressionParser parse = new SpelExpressionParser();
+		Expression result = parse.parseExpression("10 + 20");
+		log.info("Result {} ", result.getValue());
+	
 	

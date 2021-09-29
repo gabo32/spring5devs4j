@@ -9,6 +9,9 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.expression.Expression;
+import org.springframework.expression.ExpressionParser;
+import org.springframework.expression.spel.standard.SpelExpressionParser;
 
 import com.gabo32.dev4j.di.atributo.Coche;
 import com.gabo32.dev4j.di.autowire.AreaCalculatorService;
@@ -67,6 +70,11 @@ public class DepencencyInjectionApplication {
 		
 		AreaCalculatorService calculator = contex.getBean(AreaCalculatorService.class);
 		log.info("Area total {}", calculator.calcAreas());
+		
+		
+		ExpressionParser parse = new SpelExpressionParser();
+		Expression result = parse.parseExpression("10 + 20");
+		log.info("Result {} ", result.getValue());
 		
 	}
 	
