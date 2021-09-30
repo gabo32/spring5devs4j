@@ -76,6 +76,19 @@ Inicializacion
 		ejemplo singleton
 	lazy - se inicilizan hasta que se usan
 		prototype
+BeanPostProcesor
+	antes y despues de inicializar el bean
+	evento por cada bean que se construye
+Orden de ejecucion
+	1. setBeanName awareInterfaces
+	2. postProcessBefore...
+	3. @PostConstruct
+	4. AfterPropertiesSet
+	5. Post ProcessAfterInitialization
+	bean vivo
+	1. @Predestroy
+	2. Destroy de disponsablebean
+	
 		
 	
 	
