@@ -15,6 +15,7 @@ import org.springframework.expression.spel.standard.SpelExpressionParser;
 
 import com.gabo32.dev4j.di.atributo.Coche;
 import com.gabo32.dev4j.di.autowire.AreaCalculatorService;
+import com.gabo32.dev4j.di.lifecycle.ExplicitBean;
 import com.gabo32.dev4j.di.lifecycle.LifeCycleBean;
 import com.gabo32.dev4j.di.profiles.EnvironmentService;
 import com.gabo32.dev4j.di.qualifier.Animal;
@@ -84,6 +85,11 @@ public class DepencencyInjectionApplication {
 	@Bean
 	public String getApplicationName() {
 		return "Gabo 32 app";
+	}
+	
+	@Bean(initMethod="init", destroyMethod="destroy")
+	public ExplicitBean getBean() {
+		return new ExplicitBean();
 	}
 
 }

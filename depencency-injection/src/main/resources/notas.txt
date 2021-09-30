@@ -62,5 +62,16 @@ Aware interfaces
 		-ApplicationeventPublisherAware
 		-ResourceLoaderAware
 		-EnvironmentAware
+Callbacks
+	deben ser void y no recibir argumentos
+	son jsr osea que no son de spring sino de java
+	postconstruct
+	predestroy
+	sino se puede acceder al codigo y anotarlo se puede usar
+		@Bean(initMethod="init", destroyMethod="destroy")
+Intefaces InitializingBean y DisposableBean 
+	funcionan igual que postconstruct y predestroy
+		
+	
 	
 	
