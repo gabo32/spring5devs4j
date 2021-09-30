@@ -87,7 +87,7 @@ public class DepencencyInjectionApplication {
 		return "Gabo 32 app";
 	}
 	
-	@Bean(initMethod="init", destroyMethod="destroy")
+	//@Bean(initMethod="init", destroyMethod="destroy")
 	public ExplicitBean getBean() {
 		return new ExplicitBean();
 	}
