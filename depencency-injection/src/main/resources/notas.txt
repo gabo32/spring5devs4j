@@ -52,5 +52,15 @@ SpEL
 	ExpressionParser parse = new SpelExpressionParser();
 		Expression result = parse.parseExpression("10 + 20");
 		log.info("Result {} ", result.getValue());
+Aware interfaces
+	permiten recibir eventos de spring
+	disponibles
+		-BeanNameAware
+		-BeanFactoryAware
+		-ApplicationContextAware
+		-MessageSourceAware
+		-ApplicationeventPublisherAware
+		-ResourceLoaderAware
+		-EnvironmentAware
 	
 	

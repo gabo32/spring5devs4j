@@ -15,6 +15,7 @@ import org.springframework.expression.spel.standard.SpelExpressionParser;
 
 import com.gabo32.dev4j.di.atributo.Coche;
 import com.gabo32.dev4j.di.autowire.AreaCalculatorService;
+import com.gabo32.dev4j.di.lifecycle.LifeCycleBean;
 import com.gabo32.dev4j.di.profiles.EnvironmentService;
 import com.gabo32.dev4j.di.qualifier.Animal;
 import com.gabo32.dev4j.di.qualifier.Avion;
@@ -75,6 +76,8 @@ public class DepencencyInjectionApplication {
 		ExpressionParser parse = new SpelExpressionParser();
 		Expression result = parse.parseExpression("10 + 20");
 		log.info("Result {} ", result.getValue());
+		
+		LifeCycleBean bean = contex.getBean(LifeCycleBean.class);
 		
 	}
 	
