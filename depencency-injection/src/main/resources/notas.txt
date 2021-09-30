@@ -71,6 +71,11 @@ Callbacks
 		@Bean(initMethod="init", destroyMethod="destroy")
 Intefaces InitializingBean y DisposableBean 
 	funcionan igual que postconstruct y predestroy
+Inicializacion
+	eager - se inicializan sin importar si se usan o no
+		ejemplo singleton
+	lazy - se inicilizan hasta que se usan
+		prototype
 		
 	
 	

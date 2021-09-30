@@ -78,7 +78,7 @@ public class DepencencyInjectionApplication {
 		Expression result = parse.parseExpression("10 + 20");
 		log.info("Result {} ", result.getValue());
 		
-		LifeCycleBean bean = contex.getBean(LifeCycleBean.class);
+		//LifeCycleBean bean = contex.getBean(LifeCycleBean.class);
 		
 	}
 	
