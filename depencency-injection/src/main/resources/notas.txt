@@ -89,6 +89,49 @@ Orden de ejecucion
 	1. @Predestroy
 	2. Destroy de disponsablebean
 	
+AOP ======
+programacion orientada a aspector
+Resuelven crosscuting converns
+-Aspect
+-join point; punto de ejecucion del programa
+-advice; accion a tomar en un joinpoint
+-pointcut; predicado que representa un conjunto de joinpoints
+-target object; objeto intevenido por uno o mas aspectos
+-aop proxy; un objeto permite soportar aspectos
+-weaving; enlace entre aspectos y objetos
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
 		
 	
 	
