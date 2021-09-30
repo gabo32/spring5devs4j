@@ -9,7 +9,8 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
 @Component
-@Lazy(false)
+//@Lazy(false)
+@Lazy
 public class BeanB {
 
 	private static final Logger log = LoggerFactory.getLogger(BeanB.class);

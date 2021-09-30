@@ -107,10 +107,11 @@ Advice:
 	-after throwing; se ejcuta cuando se lanza una exception
 	-after finally; se ejecuta si hay o no exception
 	-around; rodea la ejecucion de un metodo decide si ejecuta o no y puede hacer algo despues
-
-
-
-
+Crear aspecto
+	crear aspect
+	colocar en el advice que se va a ejecutar
+	@Before("execution(* com.gabo32.dev4j.di.aop.TargetObject.*(..))")
+	indicar cual es el target
 
 
 

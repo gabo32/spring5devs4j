@@ -13,6 +13,7 @@ import org.springframework.expression.Expression;
 import org.springframework.expression.ExpressionParser;
 import org.springframework.expression.spel.standard.SpelExpressionParser;
 
+import com.gabo32.dev4j.di.aop.TargetObject;
 import com.gabo32.dev4j.di.atributo.Coche;
 import com.gabo32.dev4j.di.autowire.AreaCalculatorService;
 import com.gabo32.dev4j.di.lifecycle.ExplicitBean;
@@ -39,7 +40,7 @@ public class DepencencyInjectionApplication {
 		//Recuperamos el contexto de spring
 		ConfigurableApplicationContext contex = SpringApplication.run(DepencencyInjectionApplication.class, args);
 		
-		Coche coche = contex.getBean(Coche.class);
+		/*Coche coche = contex.getBean(Coche.class);
 		//System.out.println(coche);
 		
 		Perro perro = contex.getBean(Perro.class);
@@ -79,7 +80,11 @@ public class DepencencyInjectionApplication {
 		log.info("Result {} ", result.getValue());
 		
 		//LifeCycleBean bean = contex.getBean(LifeCycleBean.class);
+		*/
 		
+		TargetObject bean = contex.getBean(TargetObject.class);
+		bean.hello("HGello world aop");
+		bean.foo();
 	}
 	
 	@Bean
