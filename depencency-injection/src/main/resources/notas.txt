@@ -100,6 +100,14 @@ Resuelven crosscuting converns
 -aop proxy; un objeto permite soportar aspectos
 -weaving; enlace entre aspectos y objetos
 
+Advice:
+	acctiona tomar en un joinpoint especifico
+	-before; antes del joinpoint interrumpe solo si se lanza una exception
+	-after returning: se ejecuta despues del joinpint a menos que se lance una exception
+	-after throwing; se ejcuta cuando se lanza una exception
+	-after finally; se ejecuta si hay o no exception
+	-around; rodea la ejecucion de un metodo decide si ejecuta o no y puede hacer algo despues
+
 
 
 
