@@ -112,12 +112,15 @@ Crear aspecto
 	colocar en el advice que se va a ejecutar
 	@Before("execution(* com.gabo32.dev4j.di.aop.TargetObject.*(..))")
 	indicar cual es el target
-
-
-
-
-
-
+Definiendo precendencia @Order
+	se indica con un numero el orden de ejecucion
+Reutilizando pointcuts
+	se puede crear una clase ahi se coloca el pointcut 
+	y desde los aspectos llamar a esta clase 
+	con el fin de no tener en muchos lados el mismo pointcut
+TypeSignature Patterns
+	otro tipo de expresion pointcut es seleccionar todos los pointcuts
+	
 
 
 

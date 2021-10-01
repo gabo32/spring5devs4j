@@ -10,6 +10,7 @@ public class TargetObject {
 	
 	private static final Logger log = LoggerFactory.getLogger(TargetObject.class);
 
+	@Devs4jAnnotation
 	public void hello(String message) {
 		log.info(message);
 	}
