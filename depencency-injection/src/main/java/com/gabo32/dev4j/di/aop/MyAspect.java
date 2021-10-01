@@ -1,5 +1,8 @@
 package com.gabo32.dev4j.di.aop;
 
+import java.lang.reflect.Modifier;
+
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.slf4j.Logger;
@@ -15,7 +18,11 @@ public class MyAspect {
 
 	//indicamos que intervenga cualquier metodo de TargeObject
 	@Before("execution(* com.gabo32.dev4j.di.aop.TargetObject.*(..))")
-	public void before() {
+	public void before(JoinPoint joinPoint) {
+		log.info("Method name {}", joinPoint.getSignature().getName());
+		log.info("Object type {}", joinPoint.getSignature().getDeclaringTypeName());
+		log.info("is Public {}", Modifier.isPublic(joinPoint.getSignature().getModifiers()));
+		log.info("Arguments {}", joinPoint.getArgs());
 		log.info("Before advice");
 	}
 }
