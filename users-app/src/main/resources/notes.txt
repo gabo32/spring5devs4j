@@ -1,0 +1,19 @@
+MVC
+	model view controller
+	model - pojo que transporta datos
+	view - visualizacion de datos del modelo
+	controller - controlla el flujo de informacion entre modelo y vista
+Anotaciones
+	Controller
+	Restcontroller
+	RequestMapping
+	getmapping
+	postmapping
+	putmapping
+	deletemapping
+	pathmapping
+	pathvariable
+	requestparam
+	responsestatus
+	service
+	
