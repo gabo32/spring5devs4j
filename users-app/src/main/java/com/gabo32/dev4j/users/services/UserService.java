@@ -2,6 +2,7 @@ package com.gabo32.dev4j.users.services;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.annotation.PostConstruct;
 
@@ -28,7 +29,10 @@ public class UserService {
 		}
 	}
 	
-	public List<User> getUsers(){
+	public List<User> getUsers(String startsWith){
+		if( startsWith != null) {
+			return users.stream().filter(u->u.getUsername().startsWith(startsWith)).collect(Collectors.toList());
+		}
 		return users;
 	}
 	

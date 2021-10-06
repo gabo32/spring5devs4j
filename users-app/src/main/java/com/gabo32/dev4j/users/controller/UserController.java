@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.gabo32.dev4j.users.models.User;
@@ -25,8 +26,8 @@ public class UserController {
 	private UserService userService;
 	
 	@GetMapping
-	public ResponseEntity<List<User>> getUsers(){
-		return new ResponseEntity<> (userService.getUsers(), HttpStatus.OK);
+	public ResponseEntity<List<User>> getUsers(@RequestParam(required=false,name="startsWith") String startsWith){
+		return new ResponseEntity<> (userService.getUsers(startsWith), HttpStatus.OK);
 	}
 	
 	@GetMapping(value="/{username}")
