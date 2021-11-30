@@ -16,4 +16,8 @@ Anotaciones
 	requestparam
 	responsestatus
 	service
-	
+PathParam	
+	usar para id
+Queryparam
+	?despues de este signo
+	usar para busqueda	
