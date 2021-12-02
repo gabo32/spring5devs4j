@@ -1,4 +1,4 @@
-package com.gabo32.dev4j.users.controller;
+package com.gabo32.dev4j.users.controllerold;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
