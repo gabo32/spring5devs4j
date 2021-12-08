@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.gabo32.dev4j.users.models.User;
-import com.gabo32.dev4j.users.services.UserServiceUsingList;
+import com.gabo32.dev4j.users.servicesold.UserServiceUsingList;
 
 @RestController
 @RequestMapping("/v1/users")

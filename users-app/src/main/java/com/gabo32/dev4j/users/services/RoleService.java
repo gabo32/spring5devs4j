@@ -9,13 +9,22 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.gabo32.dev4j.users.entities.Role;
+import com.gabo32.dev4j.users.entities.User;
 import com.gabo32.dev4j.users.repositories.RoleRepository;
+import com.gabo32.dev4j.users.repositories.UserInRoleRepository;
 
 @Service
 public class RoleService {
 
 	@Autowired	
 	private RoleRepository repository;
+	
+	@Autowired
+	private UserInRoleRepository inRoleRepository;
+	
+	public List<User> getUsersByRole(String rolName){
+		return inRoleRepository.findUserByRoleName(rolName);
+	}
 	
 	public List<Role> getRoles(){
 		return repository.findAll();
