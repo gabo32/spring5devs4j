@@ -7,14 +7,19 @@ import javax.annotation.security.RolesAllowed;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.access.prepost.PostAuthorize;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.gabo32.dev4j.users.entities.Role;
 import com.gabo32.dev4j.users.entities.User;
+import com.gabo32.dev4j.users.modelos.AuditDetails;
 import com.gabo32.dev4j.users.modelos.Devs4jSecurityRule;
 import com.gabo32.dev4j.users.repositories.RoleRepository;
 import com.gabo32.dev4j.users.repositories.UserInRoleRepository;
@@ -28,6 +33,11 @@ public class RoleService {
 	
 	@Autowired
 	private UserInRoleRepository inRoleRepository;
+	
+	@Autowired
+	private KafkaTemplate<Integer, String> kafkaTemplate;
+	
+	private ObjectMapper mapper = new ObjectMapper();
 	
 	//@Secured({"ROLE_ADMIN"})
 	//@RolesAllowed({"ROLE_ADMIN"})
@@ -43,7 +53,14 @@ public class RoleService {
 	}
 	
 	public Role createRole(Role role) {
-		return repository.save(role);
+		 Role roleCreated = repository.save(role);
+		 AuditDetails details = new AuditDetails(SecurityContextHolder.getContext().getAuthentication().getName(), role.getName());
+		 try {
+			kafkaTemplate.send("devs4j-topic", mapper.writeValueAsString(details));
+		} catch (JsonProcessingException e) {
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Error parsin the message");
+		}
+		 return roleCreated;
 	}
 	
 	public Role updateRole(Integer roleId, Role role) {
